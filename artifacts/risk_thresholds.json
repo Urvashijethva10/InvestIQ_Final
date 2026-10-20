@@ -1,0 +1,11 @@
+{
+  "low_medium_threshold": 0.01147737690059371,
+  "medium_high_threshold": 0.015208168902373627,
+  "class_mapping": {
+    "0": "Low Risk",
+    "1": "Medium Risk",
+    "2": "High Risk"
+  },
+  "selected_model": "Random Forest",
+  "target": "standard deviation of next 20 daily returns"
+}

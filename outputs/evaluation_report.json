@@ -1,0 +1,119 @@
+{
+  "report_title": "InvestIQ Evaluation Report",
+  "provenance": "Generated from verified notebook chronological evaluation & model_data.csv",
+  "dataset_split": {
+    "total_dates": 2627,
+    "train_dates_count": 2081,
+    "test_dates_count": 526,
+    "gap_dates_count": 20,
+    "train_rows": 8324,
+    "test_rows": 2104,
+    "gap_start_date": "2024-07-09",
+    "test_start_date": "2024-08-07"
+  },
+  "risk_thresholds": {
+    "low_medium_threshold": 0.01147737690059371,
+    "medium_high_threshold": 0.015208168902373627,
+    "class_mapping": {
+      "0": "Low Risk",
+      "1": "Medium Risk",
+      "2": "High Risk"
+    },
+    "selected_model": "Random Forest",
+    "target": "standard deviation of next 20 daily returns"
+  },
+  "features": [
+    "Daily_Return",
+    "Return_5D",
+    "Volatility_20",
+    "RSI_14",
+    "Price_MA5_Ratio",
+    "Price_MA20_Ratio",
+    "Return_20D",
+    "Volatility_5"
+  ],
+  "metrics": [
+    {
+      "Model": "Random Forest",
+      "Accuracy": 0.4881178707224334,
+      "Balanced Accuracy": 0.4863394538998578,
+      "Weighted Precision": 0.4837363374470593,
+      "Weighted Recall": 0.4881178707224334,
+      "Weighted F1": 0.4851889488274272,
+      "Macro F1": 0.4838014697572546
+    },
+    {
+      "Model": "XGBoost",
+      "Accuracy": 0.4729087452471482,
+      "Balanced Accuracy": 0.4706042596219377,
+      "Weighted Precision": 0.4664738541667087,
+      "Weighted Recall": 0.4729087452471482,
+      "Weighted F1": 0.4685589485961477,
+      "Macro F1": 0.4667691381622191
+    }
+  ],
+  "random_forest_confusion_matrix": {
+    "labels": [
+      "Low Risk",
+      "Medium Risk",
+      "High Risk"
+    ],
+    "matrix": [
+      [
+        397,
+        192,
+        134
+      ],
+      [
+        239,
+        242,
+        201
+      ],
+      [
+        141,
+        170,
+        388
+      ]
+    ]
+  },
+  "feature_importances": [
+    {
+      "Feature": "Volatility_20",
+      "Importance": 0.2822515231286638
+    },
+    {
+      "Feature": "Volatility_5",
+      "Importance": 0.16189424096025118
+    },
+    {
+      "Feature": "Return_20D",
+      "Importance": 0.11628669967737754
+    },
+    {
+      "Feature": "Price_MA20_Ratio",
+      "Importance": 0.10616914295585392
+    },
+    {
+      "Feature": "RSI_14",
+      "Importance": 0.09162272103380367
+    },
+    {
+      "Feature": "Return_5D",
+      "Importance": 0.08902011985429915
+    },
+    {
+      "Feature": "Price_MA5_Ratio",
+      "Importance": 0.07940767828331254
+    },
+    {
+      "Feature": "Daily_Return",
+      "Importance": 0.07334787410643828
+    }
+  ],
+  "selected_model": "Random Forest",
+  "notes": [
+    "Random Forest is the active selected model based on higher held-out weighted F1 score.",
+    "XGBoost evaluation metrics are preserved from model_metrics.csv; model artifact is kept unchanged in artifacts/.",
+    "Accuracy in the ~47-49% range reflects realistic non-leaking multi-class financial risk forecasting."
+  ]
+}
